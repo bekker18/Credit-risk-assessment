@@ -1,0 +1,35 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# ---- Virtual environment / uv ----
+.venv/
+# NOTE: keep pyproject.toml and uv.lock tracked for reproducibility
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Trained models & run artifacts ----
+models/*.joblib
+mlruns/
+mlflow.db
+
+# ---- Generated outputs ----
+submission.csv
+# data/processed/        # uncomment to ignore generated plots
+
+# ---- Dataset (provided separately; not external data) ----
+# The brief says not to use external datasets - the provided CSVs are large and
+# distributed with the assignment, so they are usually not committed. Comment the
+# next two lines out if your grader expects the data inside the repo.
+data/raw/*.csv
+
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+.env

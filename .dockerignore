@@ -1,0 +1,29 @@
+# Keep the build context small: exclude everything not needed to run the pipeline.
+
+# Virtual env and caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Version control & editor
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# Notebooks and docs (not needed at runtime)
+notebooks/
+README.md
+
+# Large / regenerable artifacts
+models/
+mlruns/
+mlflow.db
+submission.csv
+data/
+
+# OS files
+.DS_Store
+Thumbs.db
