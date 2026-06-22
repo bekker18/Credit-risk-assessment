@@ -10,7 +10,8 @@ threshold = bundle["threshold"]
 
 # load the evaluation data (no label column)
 df = load_data("data/raw/eval.csv")
-ids = df["ID"]
+id_col = "ID" if "ID" in df.columns else "id"
+ids = df[id_col]
 X, _ = split_X_y(df)
 
 # predict probabilities and apply the threshold

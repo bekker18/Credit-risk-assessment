@@ -1,4 +1,5 @@
 import warnings
+from pathlib import Path
 
 import joblib
 import numpy as np
@@ -104,5 +105,6 @@ print("\n", classification_report(y, preds))
 print(confusion_matrix(y, preds))
 
 # save the best model + threshold
+Path("models").mkdir(exist_ok=True)
 joblib.dump({"model": best_pipe, "threshold": best_t}, "models/model.joblib")
 print("\nModel saved to models/model.joblib")

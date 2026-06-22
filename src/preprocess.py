@@ -43,7 +43,7 @@ def load_data(path):
 
 def split_X_y(df):
     y = df[TARGET] if TARGET in df.columns else None
-    X = df.drop(columns=[c for c in ["ID", TARGET] if c in df.columns])
+    X = df.drop(columns=[c for c in ["ID", "id", TARGET] if c in df.columns])
     return X, y
 
 
