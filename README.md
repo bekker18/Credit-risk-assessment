@@ -258,11 +258,3 @@ python src/predict.py
 ```
 
 This will train the final model and generate the final `submission.csv` file.
-
----
-
-## Author
-
-Bekzod Kadirov
-Politecnico di Torino
-Data Science and Engineering
