@@ -23,8 +23,7 @@ Only the dataset provided for the project is used. No external datasets are incl
 ├── data
 │   ├── raw
 │   │   ├── dev.csv
-│   │   ├── eval.csv
-│   │   └── submission.csv
+│   │   └── eval.csv
 │   └── processed
 │       ├── correlation_num_features.png
 │       ├── credit_limit_default.png
