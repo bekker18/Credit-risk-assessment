@@ -10,7 +10,7 @@ The task is formulated as a binary classification problem:
 * `0` = No default
 * `1` = Default
 
-The main evaluation metric used for model selection is  **Macro F1-score** , as required by the project specification. Macro F1-score is appropriate for this task because the dataset is imbalanced and both classes should contribute equally to the final evaluation.
+The main evaluation metric used for model selection is  **Macro F1-score** , as required by the project specification. Macro F1-score is appropriate for this task because the dataset is imbalanced and both classes contribute equally to the final evaluation.
 
 Only the dataset provided for the project is used. No external datasets are included.
 
@@ -25,8 +25,6 @@ Only the dataset provided for the project is used. No external datasets are incl
 │   │   ├── dev.csv
 │   │   └── eval.csv
 │   └── processed
-│       ├── correlation_num_features.png
-│       ├── credit_limit_default.png
 │       ├── default_distribution.png
 │       └── default_rate_by_PAY_0.png
 │
@@ -42,12 +40,13 @@ Only the dataset provided for the project is used. No external datasets are incl
 │   ├── predict.py
 │   ├── experiment_logreg.py
 │   ├── experiment_rf.py
-│   ├── experiment_lgbm.py
 │   ├── experiment_hgb.py
+│   ├── experiment_lgbm.py
 │   └── experiment_ensemble.py
 │
-├── requirements.txt
+├── DSL_report_summer.pdf
 ├── README.md
+├── requirements.txt
 └── submission.csv
 ```
 
@@ -55,13 +54,15 @@ Only the dataset provided for the project is used. No external datasets are incl
 
 ## Environment Setup
 
+The project was developed and tested with  **Python 3.12** .
+
 Install the required dependencies from the project root directory:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-The project was developed using Python and the following main libraries:
+Main libraries used:
 
 * pandas
 * numpy
@@ -69,12 +70,13 @@ The project was developed using Python and the following main libraries:
 * LightGBM
 * matplotlib
 * joblib
+* jupyter
 
 ---
 
 ## Data
 
-The dataset files must be placed in the following directory:
+The dataset files must be placed in:
 
 ```text
 data/raw/
@@ -101,20 +103,20 @@ src/preprocess.py
 
 The preprocessing step includes:
 
-* Loading the development and evaluation datasets
-* Cleaning categorical values in `EDUCATION` and `MARRIAGE`
-* Separating features and target
-* Applying numerical imputation and scaling
-* Applying one-hot encoding to categorical variables
+* loading the development and evaluation datasets;
+* cleaning categorical values in `EDUCATION` and `MARRIAGE`;
+* separating features and target;
+* applying numerical imputation and scaling;
+* applying one-hot encoding to categorical variables.
 
-Additional repayment-history features are created from the six repayment status columns:
+Additional repayment-history features are created from the six repayment-status columns:
 
-* `num_late`: number of months with delayed payment
-* `max_delay`: maximum repayment delay observed
-* `mean_delay`: average repayment delay
-* `delay_trend`: difference between the most recent and oldest repayment status
+* `num_late`: number of months with delayed payment;
+* `max_delay`: maximum repayment delay observed;
+* `mean_delay`: average repayment delay;
+* `delay_trend`: difference between the most recent and oldest repayment status.
 
-These features summarize the repayment behaviour of each client and are used to improve the predictive performance of the model.
+These features summarize the repayment behaviour of each client and are used to improve predictive performance.
 
 ---
 
@@ -142,11 +144,7 @@ The training script performs the following steps:
 6. Uses stratified 5-fold cross-validation
 7. Optimizes the classification threshold for Macro F1-score
 8. Prints classification metrics and confusion matrix
-9. Saves the final trained model and threshold to:
-
-```text
-models/model.joblib
-```
+9. Saves the final trained model and threshold to `models/model.joblib`
 
 ---
 
@@ -164,11 +162,7 @@ The prediction script:
 2. Loads the evaluation dataset from `data/raw/eval.csv`
 3. Predicts default probabilities
 4. Applies the optimized classification threshold
-5. Saves the final submission file as:
-
-```text
-submission.csv
-```
+5. Saves the final submission file as `submission.csv`
 
 The generated file follows the required format:
 
@@ -230,11 +224,11 @@ notebooks/EDA.ipynb
 
 The notebook includes:
 
-* Class distribution analysis
-* Credit limit analysis
-* Repayment status analysis
-* Correlation analysis
-* Visualizations used to support the report
+* class distribution analysis;
+* credit limit analysis;
+* repayment status analysis;
+* correlation analysis;
+* visualizations used to support the report.
 
 Generated figures are stored in:
 
@@ -257,3 +251,13 @@ python src/predict.py
 ```
 
 This will train the final model and generate the final `submission.csv` file.
+
+---
+
+## Authors
+
+Bekzod Kadirov — s333564
+Temurbek Karimov — s333565
+
+Politecnico di Torino
+Data Science and Engineering
