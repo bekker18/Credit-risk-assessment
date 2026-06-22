@@ -1,15 +1,3 @@
-"""Experiment: soft-voting ensemble of HGB + Logistic Regression.
-
-The two models use DIFFERENT encodings of the PAY columns on purpose:
-  - HGB  : PAY as ordinal numeric (build_preprocessor from preprocess.py)
-  - LogReg: PAY one-hot encoded, with rare high delays (>=5) capped to 4 so the
-            one-hot does not create ultra-rare columns that go missing in a CV fold.
-Soft voting averages their predicted probabilities. Because the two models make
-partly different errors, the average can beat either one alone.
-
-Comparison experiment - does not overwrite the saved HGB model.
-"""
-
 import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import HistGradientBoostingClassifier, VotingClassifier

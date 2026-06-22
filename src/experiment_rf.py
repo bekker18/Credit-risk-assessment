@@ -1,14 +1,3 @@
-"""Experiment: Random Forest (bagged trees).
-
-Like HGB this is a tree ensemble, so PAY stays as ordinal numeric (reuses
-build_preprocessor from preprocess.py - no one-hot, scaling is a harmless no-op
-for trees). Difference from HGB: trees are built independently and averaged
-(bagging) rather than sequentially boosted, so the errors differ.
-
-Same protocol as the other experiments: stratified 5-fold CV, a small random
-search, out-of-fold threshold tuning, Macro F1 + ROC-AUC. Does not save a model.
-"""
-
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import (

@@ -1,13 +1,3 @@
-"""Experiment: logistic regression with one-hot encoded PAY columns.
-
-Unlike train.py (gradient boosting, PAY treated as ordinal numeric), a linear model
-cannot capture the non-linear jump in default rate across PAY levels unless each level
-gets its own coefficient. So here the PAY columns are ONE-HOT encoded instead of scaled.
-We tune the regularisation strength C, then tune the decision threshold for Macro F1.
-
-This is a comparison experiment - it does not overwrite the saved HGB model.
-"""
-
 import numpy as np
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer

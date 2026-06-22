@@ -1,15 +1,3 @@
-"""Experiment: LightGBM gradient boosting.
-
-Same family as HGB but with leaf-wise tree growth and richer regularisation, so it
-is the model most likely to beat HGB outright on this kind of tabular data. Tree
-based, so PAY stays ordinal numeric (reuses build_preprocessor).
-
-Requires: pip install lightgbm  (uv add lightgbm)
-
-Same protocol as the other experiments: stratified 5-fold CV, random search,
-out-of-fold threshold tuning, Macro F1 + ROC-AUC. Does not save a model.
-"""
-
 import numpy as np
 from lightgbm import LGBMClassifier
 from sklearn.metrics import (
