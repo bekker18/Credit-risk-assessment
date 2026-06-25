@@ -1,0 +1,32 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter cache
+.ipynb_checkpoints/
+
+# Git
+.git/
+.gitignore
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build/cache files
+*.log
+.cache/
+.pytest_cache/
+
+# Optional local outputs
+*.tmp
